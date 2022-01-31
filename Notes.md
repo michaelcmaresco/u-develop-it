@@ -76,3 +76,66 @@ Goals for this weeks challenge
                 2. Create the database and candidates table. We’ll connect to MySQL and create the first database. We’ll then add a table to the database to hold the data for the candidates.
                 3. Populate candidates table with data. The next step is to add data about the candidates to the table.
                 4. Save queries in schema and seed files. Create schema and seed files so that other developers can automatically create the database structure and pre-populate it with data from the command line. 
+
+                Any "db" folders will be representative of a "database" 
+
+                    A database is a collection of interrelated data. This data is stored in one or more tables that are related to one another.
+
+                    A table is composed of rows and columns. A column represents a field. A row represents a record.
+
+                    A query is a request for data from a database table or a combination of tables.
+
+                    1. Given the following channels table, answer the questions:
+
+                        name	subject	subscribers	total_views	post_frequency	sponsors	id
+                        2K4U	gaming	434,924	1,323,424	weekly	EA	1
+                        Home Tech	home	23,524	228,797	monthly	Amazon	2
+                        Pinnacle Point	tech	38,671	428,797	weekly	Skins	3
+                        Goose	bouldering	7,827	83,126	monthly	NULL	4
+                        15 min Keto	food	523,342	1,826,826	weekly	Amazon	5 
+                    2. Which SQL query would return records for Home Tech and Goose?
+
+
+                        SELECT * FROM channels WHERE subscribers > 20000;
+
+                        SELECT * FROM channels WHERE subscribers > 20000;
+
+                        SELECT * FROM channels WHERE sponsor = "Amazon";
+
+                        SELECT * FROM channels WHERE sponsor = "Amazon";
+
+                        SELECT * FROM channels WHERE post_frequency = "monthly";
+
+                        SELECT * FROM channels WHERE post_frequency = "monthly";
+
+                        SELECT * FROM channels WHERE id = 2;
+
+                        SELECT * FROM channels WHERE id = 2;
+                        Yes, only Home Tech and Goose have a post_frequency value of "monthly".
+                    3. What would be the best syntax to use to update 2K4U's subscriber count?
+
+
+                        UPDATE channels SET subscribers = 500000 WHERE id = 1;
+
+                        UPDATE channels SET subscribers = 500000 WHERE id = 1;
+
+                        UPDATE channels SET subscribers = 500000 WHERE name = "2K4U";
+
+                        UPDATE channels SET subscribers = 500000 WHERE name = "2K4U";
+
+                        UPDATE channels SET subscribers = 500000 WHERE subject = "gaming";
+
+                        UPDATE channels SET subscribers = 500000 WHERE subject = "gaming";
+                        Yes, updating by id would ensure that only one record is changed.
+                    4. How would the sponsors column have most likely been defined in the schema?
+
+
+                        sponsors VARCHAR(30) NOT NULL
+
+                        sponsors VARCHAR(30) NOT NULL
+
+                        sponsors VARCHAR(5) NOT NULL
+
+                        sponsors VARCHAR(5) NOT NULL
+
+                        sponsors VARCHAR(30)
