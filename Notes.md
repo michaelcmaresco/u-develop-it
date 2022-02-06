@@ -1,5 +1,30 @@
 Notes:
 
+initialize Node.js
+
+    npm init --y
+
+install npm packages
+
+    npm install express mysql2
+
+"start": "node server.js"
+
+Initiate MySQL server
+mysql -u root -p
+
+Examples
+    SHOW DATABASES;
+    USE election
+    SHOW TABLES;
+
+    SELECT * FROM candidates;
+
+mysql> CREATE DATABASE --------;
+USE election
+
+
+
 SQL : Module 12
     - Structured Query Language
 
@@ -215,3 +240,38 @@ Goals for this weeks challenge
             CORRECT : There's nothing preventing the deletion of a candidate that doesn't exist.
 
             It's missing the params variable that would allow the prepared statement to work correctly.
+
+
+12.3
+
+Create and populate a parties table. You'll need some party data before you can make progress on any other step.
+Update the candidates table to reference parties. Once you have a parties table, you can update the candidates table to reference it.
+Update candidate routes to join with party data. Update the existing route to return the combined data.
+Create API routes for parties. The routes for parties are fairly straightforward, so it would be helpful to take care of them now.
+Add a candidate route to change their party. Finally, you can tackle the trickier route of updating an existing record.
+
+ALTER TABLE candidates ADD COLUMN party_id INTEGER;
+        Enter the ALTER TABLE statement. This statement allows you to add a new field, delete an existing field, or modify a field.
+
+In SQL, you can delete a table using the DROP TABLE statement. We'll most likely need to drop the tables many times as we continue to build out the database, so let's factor that into the schema.sql file.
+
+As noted previously, the order of table creation is vital due to the dependency of the candidates table on the existence of a parties.id.
+
+run file - running file - running files
+    source db/schema.sql
+    source db/seeds.sql
+
+    Questions
+
+        Which SQL keyword deletes a table?
+
+            DROP
+
+        Which one of these is NOT a benefit of foreign key constraints?
+
+            They let you create tables in any order you like.
+
+        Assuming that you want to join an items table with a categories table, which SQL statement is correct?
+
+            SELECT * FROM items
+            LEFT JOIN categories ON items.category_id = categories.id;
