@@ -275,3 +275,12 @@ run file - running file - running files
 
             SELECT * FROM items
             LEFT JOIN categories ON items.category_id = categories.id;
+
+
+12.4: 
+    Steps for this lesson
+
+        1.Create and populate a voters table. We should ensure that we have data before we begin any other work.
+        2.Modularize the application. Because the app is getting larger, now is a good time to reorganize the code before it gets too unwieldy.
+        3. Create GET routes for voters. Create routes to return voter data.
+        4. Create POST, PUT, and DELETE routes. Create routes to create, update, and delete voter data.
