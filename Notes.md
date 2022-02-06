@@ -139,3 +139,27 @@ Goals for this weeks challenge
                         sponsors VARCHAR(5) NOT NULL
 
                         sponsors VARCHAR(30)
+
+12.2
+
+    In this lesson, we'll achieve the following:
+
+        Connect to a MySQL database with a Node.js application.
+
+        Execute SQL queries in the Express.js routes using MySQL methods.
+
+        Test the API endpoint using Insomnia and the browser.
+
+
+        Which of the following gameplans do you think is the best way to tackle this lesson?
+
+            1. Set up the Node.js application with MySQL. Connect to the MySQL database in the Node.js application.
+            2. Build the database calls. Use mysql2 to make calls to the database to execute the SQL queries.
+            3. Create the GET routes. Use Express.js to build the GET routes to perform the read operations.
+            4. Create the DELETE route. Use Express.js to build the DELETE routes to perform the delete operations.
+            5. Create the POST route. Use Express.js to build the POST routes to perform the create operations.
+            6. Save your progress with Git. Finally, we’ll need to close the corresponding GitHub issue.\
+
+            mysql2 : allows us to connect to the MySql database and execute the SQL commands on the database.
+
+            to exit mysql : quit; or exit; 
