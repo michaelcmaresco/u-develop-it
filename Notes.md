@@ -163,3 +163,55 @@ Goals for this weeks challenge
             mysql2 : allows us to connect to the MySql database and execute the SQL commands on the database.
 
             to exit mysql : quit; or exit; 
+
+12.2
+
+    Questions:
+        1. Which SQL query will return all of the candidates who are not industry connected?
+
+
+            SELECT * FROM candidates where industry_connected;.
+
+            CORRECT : SELECT * FROM candidates WHERE industry_connected = 0;
+
+            SELECT * FROM candidates WHERE industry_connected = 1;
+
+        2. Which code block is the correct way to set up a SQL query with ? placeholders?
+
+
+            const sql = `INSERT INTO pets (?, ?) VALUES(?, ?)`;
+            const params = {name: 'Whiskers', age: 7};
+
+            const sql = `INSERT INTO pets (?, ?) VALUES(?, ?)`; 
+            const params = {name: 'Whiskers', age: 7};
+
+            const sql = `INSERT INTO pets (?, ?) VALUES(?, ?)`;
+            const params = ['Whiskers', 7];
+
+            CORRECT :       const sql = `INSERT INTO pets (name, age) VALUES(?, ?)`;
+                            const params = {name: 'Whiskers', age: 7};
+
+
+        3. What's wrong with the following code?
+
+            app.delete('/api/candidate/:id', (req, res) => {
+            const sql = `DELETE FROM candidates WHERE id = ?`;
+
+            db.query(sql, req.params.id, (err, result) => {
+                if (err) {
+                res.status(400).json({ error: res.message });
+                }
+                res.json({
+                message: 'deleted',
+                changes: result.affectedRows,
+                id: req.params.id
+                });
+            });
+            });
+
+
+            The status code should be 500 .
+
+            CORRECT : There's nothing preventing the deletion of a candidate that doesn't exist.
+
+            It's missing the params variable that would allow the prepared statement to work correctly.
